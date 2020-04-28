@@ -6,9 +6,13 @@ Monit is a utility for managing and monitoring processes, programs, files, direc
 
 (All the sample files available in the GIT repository: https://github.com/divlv/monit)
 
-### 1. Create directory for your custom configuration, e.g. `/opt/monit/customconfig`
+### 1. Custom directory
 
-### 2. Add file `/opt/monit/customconfig/setting.cfg` with the following content:
+Create directory for your custom configuration, e.g. `/opt/monit/customconfig`
+
+### 2. setting.cfg
+
+Add file `/opt/monit/customconfig/setting.cfg` with the following content:
 ```
 set httpd port 2812 and
   use address 0.0.0.0
@@ -16,8 +20,9 @@ set httpd port 2812 and
 ```
 Change at least login (admin) and password (mymonit).
 
+### 3. myservices.rc
 
-### 3. Add your configuration file here (with *.rc extension) e.g. `/opt/monit/customconfig/myservices.rc`
+Add your configuration file here (with *.rc extension) e.g. `/opt/monit/customconfig/myservices.rc`
 ```
 #
 check host Wikipedia with address www.wikipedia.org
@@ -38,7 +43,10 @@ check host My_SQL_Database with address db.example.com
     then alert
 #
 ```
-### 4. Start docker image of *monit* service like this:
+
+### 4. Start service
+
+Start docker image of *Monit* service like this:
 
 ```
 docker run -d --rm --net=host -v /opt/monit/customconfig:/etc/monit/custom dimedrol/monit
