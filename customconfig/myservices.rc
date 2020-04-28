@@ -1,0 +1,10 @@
+#
+check host www.who.int with address www.who.int
+    if failed
+        port 443
+        protocol https
+        with http headers [Host: mmonit.com, Cache-Control: no-cache, Cookie: csrftoken=nj1bI3CnMCaiNv4beqo8ZaCfAQQvpgLH]
+        and request / with content = "class"
+        and timeout 10 seconds
+    then alert
+#
