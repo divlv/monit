@@ -1,9 +1,5 @@
 #
-# Dockerfile for monit
-#
-
 FROM alpine
-MAINTAINER kev <noreply@easypi.pro>
 
 RUN apk add --no-cache monit
 
