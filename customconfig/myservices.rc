@@ -1,9 +1,10 @@
 #
-check host www.who.int with address www.who.int
+check host Wikipedia with address www.wikipedia.org
     if failed
         port 443
         protocol https
-        with http headers [Host: mmonit.com, Cache-Control: no-cache, Cookie: csrftoken=nj1bI3CnMCaiNv4beqo8ZaCfAQQvpgLH]
+        # Add specific headers here, if needed
+        #with http headers [Host: mmonit.com, Cache-Control: no-cache, Cookie: csrftoken=nj1bI3CnMCaiNv4beqo8ZaCfAQQvpgLH]
         and request / with content = "class"
         and timeout 10 seconds
     then alert
