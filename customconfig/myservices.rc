@@ -9,3 +9,10 @@ check host Wikipedia with address www.wikipedia.org
         and timeout 10 seconds
     then alert
 #
+# Just check port alive:
+check host My_SQL_Database with address db.example.com
+    if failed
+        port 1234
+        and timeout 10 seconds
+    then alert
+#
